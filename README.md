@@ -15,6 +15,10 @@ A terminal music player with a full-screen TUI, a no-TUI mode that keeps your sh
 
 </div>
 
+<!-- live-links -->
+**Project page:** [gitguy268.github.io/needle](https://gitguy268.github.io/needle/) · [needle-theta-rosy.vercel.app](https://needle-theta-rosy.vercel.app)
+<!-- /live-links -->
+
 <!-- run-steps:start -->
 ## Run it locally, step by step
 
