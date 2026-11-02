@@ -1,0 +1,10 @@
+/needle
+/dist/
+*.test
+*.out
+.DS_Store
+.env
+.env.*
+.vercel/
+!.env.example
+node_modules/

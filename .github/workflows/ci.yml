@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        # Linux covers mpv; macOS also covers the afplay backend.
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+
+      - name: Install mpv and ffmpeg (Linux)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends mpv ffmpeg
+
+      - name: Install mpv and ffmpeg (macOS)
+        if: runner.os == 'macOS'
+        run: brew install mpv ffmpeg
+
+      - name: gofmt
+        run: test -z "$(gofmt -l .)" || { gofmt -l .; exit 1; }
+
+      - run: go vet ./...
+
+      - run: go test -race ./...
+
+      - name: Build
+        run: CGO_ENABLED=0 go build -trimpath -o needle .
+
+      - name: Smoke test (silent)
+        env:
+          NEEDLE_MPV_ARGS: --ao=null
+        run: |
+          ffmpeg -loglevel error -f lavfi -i sine=f=440:d=2 -metadata title=Tone tone.mp3
+          ./needle play tone.mp3 | tee out.txt
+          grep -q Tone out.txt
+          ./needle --raw tone.mp3 | grep -q '"event":"finished"'

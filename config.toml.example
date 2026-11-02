@@ -1,0 +1,51 @@
+# Copy to ~/.config/needle/config.toml. Every key is optional.
+
+# Folders that `needle index` and the TUI scan.
+music_dirs = ["~/Music"]
+
+# auto picks mpv, then afplay on macOS. Or set "mpv" or "afplay".
+backend = "auto"
+
+# Start volume, 1 to 100.
+volume = 80
+
+# Cover art: auto, halfblock, kitty, iterm, sixel or off.
+# The TUI and inline player always draw half blocks (or nothing for off);
+# kitty, iterm and sixel apply to `needle art`.
+art = "auto"
+
+# Colours: "#rrggbb" or an ANSI colour number such as "13". Empty keeps the
+# terminal's own colour.
+[theme]
+# A preset: "default", "nujabes" or "graduation" (Ye). Presets also show a line
+# of text in the player. --theme overrides all of this for one run.
+# name = "nujabes"
+# Any colour set here overrides the preset. The values shown are the defaults.
+# background and foreground recolour the terminal during the TUI, where the
+# terminal allows it.
+# background = ""
+# foreground = ""
+# accent = "#e0af68"
+# text = ""
+# dim = "8"
+# select = "#7aa2f7"
+
+# Optional Pedalboard audio effects. Off by default. Requires Python 3.9+ and
+# `python3 -m pip install pedalboard`. Only local files are processed; streams
+# play unchanged. The first play of a track renders it into the cache below.
+[effects]
+enabled = false
+preset = "bass"      # bass, vocal, warm or loud
+cache_mb = 1024      # processed WAV cache under ~/.cache/needle/effects
+
+# A custom chain replaces the preset when enabled. Effects and parameter names
+# are checked against a fixed allowlist (see backend/fx/chain.go).
+# [[effects.chain]]
+# type = "HighpassFilter"
+# cutoff_frequency_hz = 80
+#
+# [[effects.chain]]
+# type = "PeakFilter"
+# cutoff_frequency_hz = 250
+# gain_db = -2.5
+# q = 1.0

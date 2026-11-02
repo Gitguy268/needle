@@ -1,0 +1,71 @@
+name: Bug report
+description: Something in needle does not work.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: To reproduce
+      description: The command you ran and the keys you pressed.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options:
+        - TUI (needle)
+        - Inline (needle play)
+        - Daemon and commands
+        - JSON lines (--headless / --raw)
+        - Library (index / list)
+    validations:
+      required: true
+  - type: dropdown
+    id: backend
+    attributes:
+      label: Backend
+      description: "`needle status` shows it."
+      options:
+        - mpv
+        - afplay
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: OS
+      options:
+        - macOS
+        - Linux
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      placeholder: "needle version, mpv --version, terminal app"
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Screenshots, `needle status --json`, or ~/.local/share/needle/daemon.log for the daemon.

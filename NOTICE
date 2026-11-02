@@ -1,0 +1,99 @@
+needle
+Copyright (c) 2026 Lucas Van De Weerd. Licensed under the MIT License (see LICENSE).
+
+The MIT grant covers needle's own code only. needle is built with, and at run
+time calls, the third-party software below, each under its own licence. needle
+is not affiliated with or endorsed by any of these projects.
+
+Compiled into the needle binary (Go modules, see go.mod for exact versions)
+- Bubble Tea, Lip Gloss, colorprofile, ultraviolet and x/ansi, x/term,
+  x/termios, x/windows, Copyright (c) Charmbracelet, Inc. MIT License.
+  https://github.com/charmbracelet
+- tag, Copyright 2015, David Howden. BSD 2-Clause License.
+  https://github.com/dhowden/tag
+- modernc.org/sqlite, libc, mathutil and memory, Copyright (c) The Sqlite,
+  Libc, Mathutil and Memory Authors. BSD 3-Clause License (libc also lists
+  the MIT-licensed musl and other sources in its LICENSE-3RD-PARTY.md).
+  https://gitlab.com/cznic
+- go-sixel, Copyright (c) 2021 Yasuhiro Matsumoto. MIT License. https://github.com/mattn/go-sixel
+- go-isatty and go-runewidth, Copyright (c) Yasuhiro Matsumoto. MIT License.
+- TOML, Copyright (c) 2013 TOML authors. MIT License. https://github.com/BurntSushi/toml
+- golang.org/x/image, x/sync, x/sys and x/term, Copyright (c) The Go Authors.
+  BSD 3-Clause License. https://go.googlesource.com
+- google/uuid, Copyright (c) 2009,2014 Google Inc. BSD 3-Clause License.
+- displaywidth and uax29, Copyright (c) 2025 and (c) 2020 Matt Sherman. MIT License.
+- go-humanize, Copyright (c) 2005-2008 Dustin Sallings. MIT License.
+- go-colorful, Copyright (c) 2013 Lucas Beyer. MIT License.
+- cancelreader, Copyright (c) 2022 Erik Geiser and Christian Muehlhaeuser. MIT License.
+- go-strftime, Copyright (c) 2022 Nuno Cruces. MIT License.
+- bigfft (remyoudompheng/bigfft), Copyright (c) 2012 The Go Authors. BSD 3-Clause License.
+- uniseg, Copyright (c) 2019 Oliver Kuederle. MIT License.
+- quant, Copyright (c) 2013 Sonia Keys. MIT License.
+- terminfo (xo/terminfo), Copyright (c) 2016 Anmol Sethi. MIT License.
+
+Run as separate programs, not bundled
+- mpv, the main audio backend. GPL-2.0-or-later or LGPL-2.1-or-later,
+  depending on the build. https://mpv.io
+- afplay and afinfo, part of macOS, used when mpv is missing.
+- ffprobe from FFmpeg, optional, for durations in the library index.
+  LGPL-2.1-or-later or GPL, depending on the build. https://ffmpeg.org
+- Pedalboard, Copyright (c) Spotify AB. GPL-3.0. Optional: used only
+  when effects are enabled, and always as a separate Python process, never
+  linked into needle. https://github.com/spotify/pedalboard
+- Python and the packages Pedalboard depends on, including NumPy
+  (BSD-3-Clause). PSF-2.0 and the dependencies' own licences. Optional, only
+  when effects are enabled. https://www.python.org
+
+Themes
+--------------------------------------------------------------------------------
+Both themes are unofficial fan tributes. They are not affiliated with or
+endorsed by Nujabes's estate, Hydeout Productions, Ye (Kanye West), Takashi
+Murakami, or any rights holder. No album art, logos or lyrics are included.
+
+- Nujabes (config/themes.go): the palette and the line "Your beat still laments
+  the world." are adapted from HalmyLyseas/omarchy-nujabes-theme,
+  Copyright (c) 2026 Halmyrach. MIT License, below. ANSI blue and the dim colour
+  were lightened for contrast. The wallpaper and kana art in that repo carry no
+  licence and are not used.
+- Ye: Graduation (config/themes.go): the palette is original. The lines are a
+  curated part of the list in ajzbc/kanye.rest, Copyright (c) 2024 Andrew Jazbec.
+  MIT License, below. That licence covers the compilation. The words are
+  attributed to Ye and remain his.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Ideas, no code
+--------------------------------------------------------------------------------
+These projects inspired parts of the design. Nothing was copied from them.
+
+- bjarneo/cliamp (MIT): a headless daemon controlled by `needle next`,
+  `needle status` and similar subcommands; an inline status line.
+- clangen/musikcube (BSD 3-Clause): browsing the library by artist, album
+  and genre in columns; a playback core kept apart from its frontends.
+- sammwyy/listnr (no licence): a SQLite cache of tags with `index` and
+  `list --search` commands; `--raw` and `--headless` JSON-lines modes;
+  cover art through Kitty, iTerm2 or Sixel with a half-block fallback.
+- TrevorSatori/kronos (GPL-3.0): theme colours set in config.toml.
+- potomak/haskell-player (BSD 3-Clause): playing through macOS's afplay and
+  afinfo; ~/Music as the default library.
+- Ay-can/kanyey (no licence): a Ye quote when the terminal opens.
+
+Demo media
+- The artists, albums, tracks and cover gradients in docs/ are made up and
+  were generated for the screenshots (silent audio, ffmpeg gradients).
