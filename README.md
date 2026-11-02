@@ -15,6 +15,35 @@ A terminal music player with a full-screen TUI, a no-TUI mode that keeps your sh
 
 </div>
 
+<!-- run-steps:start -->
+## Run it locally, step by step
+
+1. **Install [mpv](https://mpv.io):** `brew install mpv` on macOS or `sudo apt install mpv` on Debian and Ubuntu.
+
+2. **Get the code:**
+
+   ```sh
+   git clone https://github.com/Gitguy268/needle.git
+   cd needle
+   ```
+
+3. **Install [Go](https://go.dev/dl/) 1.27** or newer.
+
+4. **Build it:**
+
+   ```sh
+   go build -o needle .
+   ```
+
+5. **Play some music:**
+
+   ```sh
+   ./needle play ~/Music/song.mp3
+   ```
+
+   Run `./needle` on its own for the full-screen player. See [Keys](#keys) below for how to quit and navigate.
+<!-- run-steps:end -->
+
 ## Features
 
 | Mode | Command | What you get |
