@@ -19,6 +19,15 @@ A terminal music player with a full-screen TUI, a no-TUI mode that keeps your sh
 **Project page:** [gitguy268.github.io/needle](https://gitguy268.github.io/needle/) · [needle-theta-rosy.vercel.app](https://needle-theta-rosy.vercel.app)
 <!-- /live-links -->
 
+## Install with Homebrew
+
+```sh
+brew trust gitguy268/tap
+brew install gitguy268/tap/needle-player
+```
+
+Installs the `needle` command. mpv is recommended on macOS (`brew install mpv`); on Linux it is installed for you.
+
 <!-- run-steps:start -->
 ## Run it locally, step by step
 
