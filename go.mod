@@ -11,7 +11,7 @@ require (
 	github.com/dhowden/tag v0.0.0-20240417053706-3d75831295e8
 	github.com/mattn/go-sixel v0.0.14
 	golang.org/x/image v0.48.0
-	golang.org/x/term v0.47.0
+	golang.org/x/term v0.48.0
 	modernc.org/sqlite v1.62.0
 )
 
