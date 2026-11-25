@@ -10,7 +10,7 @@ require (
 	github.com/charmbracelet/x/ansi v0.11.9
 	github.com/dhowden/tag v0.0.0-20240417053706-3d75831295e8
 	github.com/mattn/go-sixel v0.0.14
-	golang.org/x/image v0.47.0
+	golang.org/x/image v0.48.0
 	golang.org/x/term v0.47.0
 	modernc.org/sqlite v1.62.0
 )
@@ -34,7 +34,7 @@ require (
 	github.com/soniakeys/quant v1.0.0 // indirect
 	github.com/xo/terminfo v1.0.0 // indirect
 	golang.org/x/sync v0.24.0 // indirect
-	golang.org/x/sys v0.49.0 // indirect
+	golang.org/x/sys v0.50.0 // indirect
 	modernc.org/libc v1.80.1 // indirect
 	modernc.org/mathutil v1.7.1 // indirect
 	modernc.org/memory v1.12.1 // indirect
